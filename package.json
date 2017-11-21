@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "route-event": "^1.0.5",
+    "routes": "^2.1.0"
+  }
+}
