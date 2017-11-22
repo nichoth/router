@@ -1,6 +1,6 @@
 # router
 
-Client side routing
+Client side routing with history management
 
 ## install
 

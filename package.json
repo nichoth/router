@@ -8,11 +8,12 @@
   },
   "scripts": {
     "start": "budo example/index.js:bundle.js --live --open --pushstate --dir=example",
+    "postversion": "git push && git push --tags && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "tape": "^4.8.0",
-    "tape-run": "^3.0.0"
+    "route-event": "^1.0.5",
+    "routes": "^2.1.0"
   },
   "devDependencies": {
     "budo": "^10.0.4"
