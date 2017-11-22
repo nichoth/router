@@ -1,6 +1,6 @@
 {
   "name": "@nichoth/router",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Client side router",
   "main": "index.js",
   "directories": {
