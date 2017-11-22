@@ -1,6 +1,36 @@
 {
+  "name": "@nichoth/router",
+  "version": "0.0.0",
+  "description": "Client side router",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "start": "budo example/index.js:bundle.js --live --open --pushstate --dir=example",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
-    "route-event": "^1.0.5",
-    "routes": "^2.1.0"
-  }
+    "tape": "^4.8.0",
+    "tape-run": "^3.0.0"
+  },
+  "devDependencies": {
+    "budo": "^10.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nichoth/router.git"
+  },
+  "keywords": [
+    "router",
+    "browser",
+    "client",
+    "side"
+  ],
+  "author": "Nick Thomas <nichoth@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nichoth/router/issues"
+  },
+  "homepage": "https://github.com/nichoth/router#readme"
 }

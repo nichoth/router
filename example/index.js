@@ -1,17 +1,5 @@
-# router
-
-Client side routing
-
-## install
-
-    npm install @nichoth/router
-
-## example
-
-```js
 var Router = require('../')
 var Bus = require('events').EventEmitter
-// this gets passed to all the routes
 var bus = new Bus()
 
 Router([
@@ -30,5 +18,4 @@ Router([
 ], bus, function onMatch (view) {
     console.log('match', view)
 })
-```
 
