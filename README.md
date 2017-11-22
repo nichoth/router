@@ -10,25 +10,40 @@ Client side routing with history management
 
 ```js
 var Router = require('../')
-var Bus = require('events').EventEmitter
-// this gets passed to all the routes
-var bus = new Bus()
+var opts = 'opts'
 
-Router([
-    ['/', function Root (bus) {
+var router = Router([
+    ['/', function Root (opts) {
         return function onRoot (params) {
             console.log('params', params)
             return 'hello root'
         }
     }],
-    ['/foo', function Foo (bus) {
+
+    ['/foo', function Foo (opts) {
         return function onFoo (params) {
             console.log('foo params', params)
             return 'hello foo'
         }
+    }],
+
+    ['/bar', function Bar () {
+        return function onBar () {
+            return 'hello bar'
+        }
     }]
-], bus, function onMatch (view) {
+], opts)  // opts gets passed to each route at instantiation
+
+
+router.onMatch(function (view) {
     console.log('match', view)
 })
+
+var btn = document.createElement('button')
+btn.innerHTML = 'go to /bar'
+document.body.appendChild(btn)
+
+// set the route programatically
+btn.addEventListener('click', ev => router.go('/bar'))
 ```
 
