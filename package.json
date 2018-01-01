@@ -1,6 +1,15 @@
 {
+  "scripts": {
+    "start": "budo example/index.js --live --pushstate"
+  },
   "dependencies": {
+    "inherits": "^2.0.3",
+    "nanobus": "^4.3.1",
     "route-event": "^1.0.5",
-    "routes": "^2.1.0"
+    "routes": "^2.1.0",
+    "xtend": "^4.0.1"
+  },
+  "devDependencies": {
+    "budo": "^10.0.4"
   }
 }
