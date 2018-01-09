@@ -1,4 +1,11 @@
 {
+  "name": "@nichoth/router",
+  "description": "Playing with client side routing again",
+  "version": "0.0.6",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
   "scripts": {
     "start": "budo example/index.js --live --pushstate"
   },
@@ -11,5 +18,20 @@
   },
   "devDependencies": {
     "budo": "^10.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nichoth/router.git"
+  },
+  "keywords": [
+    "router",
+    "client-side",
+    "browser"
+  ],
+  "author": "nichoth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nichoth/router/issues"
+  },
+  "homepage": "https://github.com/nichoth/router#readme"
 }
