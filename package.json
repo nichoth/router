@@ -7,7 +7,7 @@
     "example": "example"
   },
   "scripts": {
-    "start": "budo example/index.js --live --pushstate"
+    "start": "budo example/index.js --live --pushstate -- -dv"
   },
   "dependencies": {
     "inherits": "^2.0.3",
