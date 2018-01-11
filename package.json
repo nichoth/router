@@ -7,7 +7,8 @@
     "example": "example"
   },
   "scripts": {
-    "start": "budo example/index.js --live --pushstate -- -dv"
+    "start": "budo example/index.js --live --pushstate -- -dv",
+    "postversion": "git push && git push --tags && npm publish"
   },
   "dependencies": {
     "inherits": "^2.0.3",
