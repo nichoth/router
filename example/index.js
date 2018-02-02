@@ -1,5 +1,6 @@
 var App = require('../')
 var app = App({ hello: 'world' })
+// app.events({ ... })
 app.on('test', console.log.bind('in here'))
 
 app.onRouteMatch(function (view) {
@@ -13,6 +14,12 @@ app.route('/', function root (params) {
 })
 
 app.route('/bar', BarRoute(app))
+    // return an instance with a view method
+    // .view(function (evs) {
+    //     return function (props) {
+    //         props.emit(evs.bla)
+    //     }
+    // })
 
 app.route('/foo', FooRoute())
 
@@ -28,11 +35,11 @@ function FooRoute () {
     this.foo = 'woo'
     this.state = 'foo state'
     this.view = 'foo view'
-    // console.log('this.name', this.constructor.name)
 }
 
 FooRoute.prototype.onMatch = function (params) {
     console.log('foo route', this.foo)
+    console.log('this.name', this.constructor.name)
     return 'foo view'
 }
 

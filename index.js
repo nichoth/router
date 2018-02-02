@@ -17,7 +17,9 @@ function Router (opts) {
         var r = self._routes.match(path)
         if (!r) throw new Error('Unhandled route, ' + path)
         var val = r.fn(r.params)
-        if (val) self._fns.forEach(fn => fn(val))
+        if (val) self._fns.forEach(function (fn) {
+            return fn(val)
+        })
     })
 
     Bus.call(this)
@@ -31,7 +33,7 @@ Router.prototype.onRouteMatch = function (fn) {
 Router.prototype.route = function (path, fn) {
     this._routes.addRoute(path, typeof fn === 'function' ?
         fn :
-        function () { fn.onMatch.apply(fn, arguments) })
+        function () { return fn.onMatch.apply(fn, arguments) })
 }
 
 module.exports = Router
