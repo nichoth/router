@@ -11,7 +11,7 @@
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
-    "@nichoth/events": "^0.5.2",
+    "@nichoth/events": "^0.6.5",
     "inherits": "^2.0.3",
     "route-event": "^2.0.2",
     "routes": "^2.1.0",
