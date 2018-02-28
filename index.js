@@ -13,7 +13,6 @@ function Router (opts) {
     this._fns = []
 
     this.setRoute = onRoute(function onChange (path) {
-        console.log('in here', path)
         var r = self._routes.match(path)
         if (!r) throw new Error('Unhandled route, ' + path)
         var val = r.fn(r.params)
@@ -34,6 +33,10 @@ Router.prototype.route = function (path, fn) {
     this._routes.addRoute(path, typeof fn === 'function' ?
         fn :
         function () { return fn.onMatch.apply(fn, arguments) })
+    return this
+
+    // @TODO
+    // return new Route(fn)
 }
 
 module.exports = Router
