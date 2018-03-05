@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "budo example/index.js:bundle.js --dir example --live --pushstate -- -dv",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags && npm publish"
   },
   "dependencies": {
     "@nichoth/events": "^0.6.5",
