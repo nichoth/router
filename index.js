@@ -12,14 +12,16 @@ function Router (opts) {
     this._routes = Routes()
     this._fns = []
 
-    this.setRoute = onRoute(function onChange (path) {
+    this.stop = onRoute(function onChange (path) {
         var r = self._routes.match(path)
         if (!r) throw new Error('Unhandled route, ' + path)
         var val = r.fn(r.params)
         if (val) self._fns.forEach(function (fn) {
-            return fn(val)
+            fn(val)
         })
     })
+
+    this.setRoute = onRoute.setRoute
 
     Bus.call(this)
 }

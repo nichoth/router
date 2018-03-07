@@ -1,7 +1,6 @@
 var App = require('../')
 var app = App({
-    hello: 'world',
-    // events: namespace({...})
+    hello: 'world'
 })
 app.on('test', console.log.bind(console, 'in here'))
 
@@ -16,29 +15,7 @@ app.route('/', function root (params) {
     return 'root view'
 })
 
-// app.route('/bar')
-//  .state(...)
-//  .effects((evs, bus, state) => ...)
-//  .onMatch(...)
-//  .view(require(...))
-
 app.route('/bar', BarRoute(app))
-    // return an instance with a view method
-    // .view(function (evs) {
-    //     return hoc.subscribe(function (props) {
-    //         props.emit(evs.bla)
-    //     })
-    // })
-
-
-
-app
-    .route('/baz', function (params) {
-    })
-    // .use(function (bus, view, fx) {
-    // })
-
-
 
 function BarRoute (app) {
     // need to curry the view with the app bus in here
@@ -71,7 +48,14 @@ FooRoute.prototype.view = function (view) {
 }
 
 app.route('/foo', FooRoute(app).view('this is the foo view'))
+app.route('/button', function () {
+    return 'this route was set by the button'
+})
 
+document.getElementById('route-setter').addEventListener('click', ev => {
+    ev.preventDefault()
+    app.setRoute('/button')
+})
 
 
 
