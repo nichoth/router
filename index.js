@@ -21,6 +21,7 @@ function Router (opts) {
         })
     })
 
+    this.bus = this
     this.setRoute = onRoute.setRoute
 
     Bus.call(this)
