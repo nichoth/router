@@ -1,3 +1,5 @@
+var url = require('url')
+var qs = require('query-string')
 var Routes = require('routes')
 var OnRoute = require('route-event')
 var Bus = require('@nichoth/events')
@@ -12,10 +14,14 @@ function Router (opts) {
     this._routes = Routes()
     this._fns = []
 
-    this.stop = onRoute(function onChange (path) {
-        var r = self._routes.match(path)
+    this.stop = onRoute(function onChange (href) {
+        var _href = url.parse(href)
+        var r = self._routes.match(_href.pathname)
         if (!r) throw new Error('Unhandled route, ' + path)
-        var val = r.fn(r.params)
+        var val = r.fn({
+            params: r.params,
+            query: qs.parse(_href.query)
+        })
         if (val) self._fns.forEach(function (fn) {
             fn(val)
         })
