@@ -17,9 +17,10 @@ function Router (opts) {
     this.stop = onRoute(function onChange (href) {
         var _href = url.parse(href)
         var r = self._routes.match(_href.pathname)
-        if (!r) throw new Error('Unhandled route, ' + path)
+        if (!r) throw new Error('Unhandled route, ' + _href.pathname)
         var val = r.fn({
             params: r.params,
+            pathname: r.pathname,
             query: qs.parse(_href.query)
         })
         if (val) self._fns.forEach(function (fn) {
