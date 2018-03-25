@@ -20,7 +20,7 @@ function Router (opts) {
         if (!r) throw new Error('Unhandled route, ' + _href.pathname)
         var val = r.fn({
             params: r.params,
-            pathname: r.pathname,
+            pathname: _href.pathname,
             query: qs.parse(_href.query)
         })
         if (val) self._fns.forEach(function (fn) {
