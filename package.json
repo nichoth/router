@@ -11,7 +11,7 @@
     "postversion": "git push && git push --tags && npm publish"
   },
   "dependencies": {
-    "@nichoth/events": "^0.6.5",
+    "@nichoth/events": "^0.7.0",
     "inherits": "^2.0.3",
     "route-event": "^3.0.0",
     "routes": "^2.1.0",
