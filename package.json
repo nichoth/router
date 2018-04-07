@@ -13,7 +13,7 @@
   "dependencies": {
     "@nichoth/events": "^0.7.0",
     "inherits": "^2.0.3",
-    "route-event": "^3.0.0",
+    "route-event": "^3.0.1",
     "routes": "^2.1.0",
     "xtend": "^4.0.1"
   },
